@@ -71,11 +71,21 @@ router.post('/minify', function(req, res) {
 		      input: f,
 		      output: folder+'new.min.js',
 		      callback: function (err, min) {
-		      	//res.download(path.join(__dirname, '../', folder,'new.min.js')); 
-		      	res.
-		      }
-		    });
-
+		      	res.download(path.join(__dirname, '../', folder,'new.min.js')); 
+		      	// fs.readFile(path.join(__dirname, '../', folder,'new.min.js'), function (err, file) {
+				     // if (err) {
+				     //     res.send(err)
+				     // } else {
+				     //     res.writeHead(200, {
+				     //        "Content-Disposition": "attachment;filename=new.min.js"
+				            
+				     //    });
+				     //    res.write(file);
+				     //    res.end();
+				     // }
+		       // });
+		    }
+		})
 		},4000);
 	}, function(){
 		var f;
