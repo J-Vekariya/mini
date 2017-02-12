@@ -1,0 +1,21 @@
+{
+  "name": "mini",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Jayesh <jgv1593@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "prelodr": "^2.1.0"
+  }
+}

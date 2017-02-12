@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Minify</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/prelodr/dist/prelodr.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+	<script src="lib/jquery/dist/jquery.min.js"></script>
+	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="lib/prelodr/dist/prelodr.min.js"></script>
+	<script src="javascripts/main.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row minDiv">
+		<h2>MINI</h2><br>	
+	</div>
+	<div class="row minDiv">
+		<input type="hidden" name="count" value="1" />
+        <div class="control-group" id="fields">
+            <label class="control-label" for="field1">Enter link address</label>
+            <div class="controls" id="profs"> 
+                <form class="input-append">
+                    <div id="field">
+	                    <input autocomplete="off" class="input form-control text" id="field1" name="prof1" type="text" placeholder="Link goes here" data-items="8"/>
+	                    <button id="b1" class="btn add-more" type="button">+</button>
+                    </div>
+                    <div id="field">
+                    	<button type="button" class="btn btn-primary" id="minify-button">Minify</button>
+                    </div>
+                </form>
+            <br>
+            <small>Press <b>+</b> to add another file :)</small>
+            </div>
+        </div>
+	</div>
+</div>
+</body>
+</html>
