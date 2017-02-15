@@ -38,10 +38,20 @@ $(document).ready(function(){
           xhr.open("post", "http://localhost:3000/users/minify", true);
           xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
-          // send the collected data as JSON
+          
+
+            xhr.onreadystatechange = function() {//Call a function when the state changes.
+                if(xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);
+                    window.open('http://localhost:3000/users/downloadFile');
+                }
+            }
+            // send the collected data as JSON
           xhr.send(JSON.stringify(d));
 
+
           xhr.onloadend = function () {
+           
             // done
            pre.hide();
           };

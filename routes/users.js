@@ -7,14 +7,15 @@ var https = require('https');
 var http = require('http');
 var ip = require('ip');
 var path=require('path');
+var folder = 'data/'+new Date().getTime() + '/';
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/downloadFile', function(req, res, next) {
+	res.download(__dirname + '/../' + folder + 'new.min.js');
 })
 
 router.post('/minify', function(req, res) {
 	var d = req.body;
-	var folder = 'data/'+new Date().getTime() + '/';
+
 	fs.mkdir(folder,function(e){
 	    if(!e || (e && e.code === 'EEXIST')){
 	        //do something with contents
@@ -71,19 +72,7 @@ router.post('/minify', function(req, res) {
 		      input: f,
 		      output: folder+'new.min.js',
 		      callback: function (err, min) {
-		      	res.download(path.join(__dirname, '../', folder,'new.min.js')); 
-		      	// fs.readFile(path.join(__dirname, '../', folder,'new.min.js'), function (err, file) {
-				     // if (err) {
-				     //     res.send(err)
-				     // } else {
-				     //     res.writeHead(200, {
-				     //        "Content-Disposition": "attachment;filename=new.min.js"
-				            
-				     //    });
-				     //    res.write(file);
-				     //    res.end();
-				     // }
-		       // });
+		      	res.send('ok');
 		    }
 		})
 		},4000);
