@@ -72,7 +72,7 @@ router.post('/minify', function(req, res) {
 		      input: f,
 		      output: folder+'new.min.js',
 		      callback: function (err, min) {
-		      	res.send('ok');
+		      	res.send({'file':__dirname + '/../' + folder + 'new.min.js'});
 		    }
 		})
 		},4000);
@@ -96,13 +96,8 @@ router.post('/minify', function(req, res) {
 			  options: {
 			    strict: true 
 			  },
-			  callback: function (err, min) {
-		      	// var path = path.resolve(".")+folder+'new.min.css';
-		      	// res.download(path); // magic of download fuction
-		      	//res.sendFile(folder+'new.min.js' , { root : rootFolder+'/../'});
-		      	res.send("here");
-		        // res.status(200).json({success : true, message : 'success', new_link: 'http://'+ip.address()+'/'+folder+'new.min.js'}).sendFile(folder+'new.min.js' , { root : __dirname});
-		      	//res.download(folder+'new.min.js');
+			  callback: function (err, min) {		      
+		      	res.send({'file':__dirname + '/../' + folder + 'new.min.css'});
 		      }
 			});
 		},10000);
